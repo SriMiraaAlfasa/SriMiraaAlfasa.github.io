@@ -268,7 +268,7 @@ const dlg=$('#dlg');
 function open(p){$('#dT').textContent=p.k;$('#dH').textContent=p.t;$('#dP').textContent=p.d;$('#dL').innerHTML=p.f.map(x=>`<li>${x}</li>`).join('');dlg.showModal()}
 $('#dX').onclick=()=>dlg.close();dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
 /* copy phone */
-{e.preventDefault();(navigator.clipboard?navigator.clipboard.writeText('8122809918'):Promise.reject()).catch(()=>{}).finally(()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)})};
+$('#copy').onclick=e=>{e.preventDefault();(navigator.clipboard?navigator.clipboard.writeText('8122809918'):Promise.reject()).catch(()=>{}).finally(()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)})};
 /* ambient particles */
 (()=>{if(calm)return;const cv=$('#bg'),x=cv.getContext('2d');let w,h,ps=[];
 const rs=()=>{w=cv.width=innerWidth;h=cv.height=innerHeight;ps=Array.from({length:Math.min(60,w/20|0)},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25}))};
